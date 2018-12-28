@@ -1,6 +1,8 @@
 package weimall.weimallfrontweb.entity;
 
-public class ProductImage {
+import java.io.Serializable;
+
+public class ProductImage implements Serializable {
     private Integer productImage_id;
     private Byte productImage_type;
     private String productImage_src;

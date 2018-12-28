@@ -1,6 +1,7 @@
 package weimall.weimallfrontweb.controller.admin;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Admin;
 import weimall.weimallfrontweb.service.AdminService;
@@ -10,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.util.UUID;
  */
 @Controller
 public class AccountController extends BaseController{
-    @Resource(name = "adminService")
+    @Autowired
     private AdminService adminService;
 
     //转到后台管理-账户页-ajax

@@ -2,19 +2,19 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xq.tmall.dao.ProductOrderItemMapper">
+<mapper namespace="weimall.weimallfrontweb.dao.ProductOrderItemMapper">
     <resultMap id="productOrderItemMap" type="productOrderItem">
         <id property="productOrderItem_id" column="productOrderItem_id"/>
         <result property="productOrderItem_number" column="productOrderItem_number"/>
         <result property="productOrderItem_price" column="productOrderItem_price"/>
         <result property="productOrderItem_userMessage" column="productOrderItem_userMessage"/>
-        <association property="productOrderItem_product" javaType="com.xq.tmall.entity.Product">
+        <association property="productOrderItem_product" javaType="weimall.weimallfrontweb.entity.Product">
             <id property="product_id" column="productOrderItem_product_id"/>
         </association>
-        <association property="productOrderItem_order" javaType="com.xq.tmall.entity.ProductOrder">
+        <association property="productOrderItem_order" javaType="weimall.weimallfrontweb.entity.ProductOrder">
             <id property="productOrder_id" column="productOrderItem_order_id"/>
         </association>
-        <association property="productOrderItem_user" javaType="com.xq.tmall.entity.User">
+        <association property="productOrderItem_user" javaType="weimall.weimallfrontweb.entity.User">
             <id property="user_id" column="productOrderItem_user_id"/>
         </association>
     </resultMap>

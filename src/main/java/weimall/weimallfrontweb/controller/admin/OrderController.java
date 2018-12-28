@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Address;
 import weimall.weimallfrontweb.entity.Product;
@@ -26,19 +27,19 @@ import java.util.Stack;
  */
 @Controller
 public class OrderController extends BaseController{
-    @Resource(name="productOrderService")
+    @Autowired
     private ProductOrderService productOrderService;
-    @Resource(name = "addressService")
+    @Autowired
     private AddressService addressService;
-    @Resource(name="userService")
+    @Autowired
     private UserService userService;
-    @Resource(name = "productOrderItemService")
+    @Autowired
     private ProductOrderItemService productOrderItemService;
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "productImageService")
+    @Autowired
     private ProductImageService productImageService;
-    @Resource(name = "lastIDService")
+    @Autowired
     private LastIDService lastIDService;
 
     //转到后台管理-订单页-ajax

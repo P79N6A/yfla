@@ -1,6 +1,8 @@
 package weimall.weimallfrontweb.entity;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
     private Integer admin_id;
     private String admin_name;
     private String admin_nickname;

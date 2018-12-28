@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.ReviewMapper;
 import weimall.weimallfrontweb.entity.Review;
 import weimall.weimallfrontweb.service.ReviewService;
@@ -11,14 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("reviewService")
+@Service
 public class ReviewServiceImpl implements ReviewService{
+    @Autowired
     private ReviewMapper reviewMapper;
-    @Resource(name = "reviewMapper")
-    public void setReviewMapper(ReviewMapper reviewMapper) {
-        this.reviewMapper = reviewMapper;
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
     public boolean add(Review review) {

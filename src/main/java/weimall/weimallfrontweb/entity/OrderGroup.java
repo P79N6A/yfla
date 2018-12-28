@@ -1,10 +1,11 @@
 package weimall.weimallfrontweb.entity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class OrderGroup {
+public class OrderGroup implements Serializable {
     private Date productOrder_pay_date;
     private Integer productOrder_count;
     private Byte productOrder_status;

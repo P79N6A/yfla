@@ -2,6 +2,7 @@ package weimall.weimallfrontweb.controller.fore;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
 import  weimall.weimallfrontweb.controller.BaseController;
 import  weimall.weimallfrontweb.entity.Category;
 import  weimall.weimallfrontweb.entity.Product;
@@ -24,19 +25,19 @@ import java.util.Map;
 
 @Controller
 public class ForeProductListController extends BaseController {
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "userService")
+    @Autowired
     private UserService userService;
-    @Resource(name = "categoryService")
+    @Autowired
     private CategoryService categoryService;
-    @Resource(name = "productImageService")
+    @Autowired
     private ProductImageService productImageService;
-    @Resource(name = "reviewService")
+    @Autowired
     private ReviewService reviewService;
-    @Resource(name = "productOrderService")
+    @Autowired
     private ProductOrderService productOrderService;
-    @Resource(name = "productOrderItemService")
+    @Autowired
     private ProductOrderItemService productOrderItemService;
 
 

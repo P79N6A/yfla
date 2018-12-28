@@ -1,6 +1,7 @@
 package weimall.weimallfrontweb.controller.fore;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import  weimall.weimallfrontweb.controller.BaseController;
 import  weimall.weimallfrontweb.entity.Address;
 import  weimall.weimallfrontweb.entity.User;
@@ -20,9 +21,9 @@ import java.util.Map;
 
 @Controller
 public class ForeRegisterController extends BaseController{
-    @Resource(name = "addressService")
+    @Autowired
     private AddressService addressService;
-    @Resource(name="userService")
+    @Autowired
     private UserService userService;
 
     //转到前台天猫-用户注册页

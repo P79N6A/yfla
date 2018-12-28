@@ -1,6 +1,7 @@
 package weimall.weimallfrontweb.controller.fore;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Category;
 import weimall.weimallfrontweb.entity.Product;
@@ -28,13 +29,13 @@ import java.util.Map;
  */
 @Controller
 public class ForeHomeController extends BaseController {
-    @Resource(name = "userService")
+    @Autowired
     private UserService userService;
-    @Resource(name="categoryService")
+    @Autowired
     private CategoryService categoryService;
-    @Resource(name="productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name="productImageService")
+    @Autowired
     private ProductImageService productImageService;
 
     //转到前台天猫-主页

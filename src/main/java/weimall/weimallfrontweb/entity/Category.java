@@ -1,8 +1,9 @@
 package weimall.weimallfrontweb.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Category {
+public class Category implements Serializable {
     private Integer category_id;
     private String category_name;
     private String category_image_src;

@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.CategoryMapper;
 import weimall.weimallfrontweb.entity.Category;
 import weimall.weimallfrontweb.service.CategoryService;
@@ -11,15 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("categoryService")
+@Service
 public class CategoryServiceImpl implements CategoryService {
-
+    @Autowired
     private CategoryMapper categoryMapper;
-    @Resource(name = "categoryMapper")
-    public void setCategoryMapper(CategoryMapper categoryMapper) {
-        this.categoryMapper = categoryMapper;
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
     public boolean add(Category category) {

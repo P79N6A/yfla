@@ -1,11 +1,12 @@
 package weimall.weimallfrontweb.entity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class User {
+public class User implements Serializable {
     private Integer user_id;
     private String user_name;
     private String user_nickname;

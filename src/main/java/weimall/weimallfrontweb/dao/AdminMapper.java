@@ -3,12 +3,13 @@ package weimall.weimallfrontweb.dao;
 
 import weimall.weimallfrontweb.entity.Admin;
 import weimall.weimallfrontweb.util.PageUtil;
-
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 @Mapper
 public interface AdminMapper {
-    Integer insertOne(@param Admin admin);
+    Integer insertOne(@Param("admin")Admin admin);
     Integer updateOne(@Param("admin") Admin admin);
 
     List<Admin> select(@Param("admin_name") String admin_name, @Param("pageUtil") PageUtil pageUtil);

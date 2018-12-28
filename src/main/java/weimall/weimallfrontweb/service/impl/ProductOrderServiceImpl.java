@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.ProductOrderMapper;
 import weimall.weimallfrontweb.entity.OrderGroup;
 import weimall.weimallfrontweb.entity.ProductOrder;
@@ -14,13 +15,10 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
-@Service("productOrderService")
+@Service
 public class ProductOrderServiceImpl implements ProductOrderService{
+    @Autowired
     private ProductOrderMapper productOrderMapper;
-    @Resource(name = "productOrderMapper")
-    public void setProductOrderMapper(ProductOrderMapper productOrderMapper) {
-        this.productOrderMapper = productOrderMapper;
-    }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override

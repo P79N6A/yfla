@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Address;
 import weimall.weimallfrontweb.entity.Product;
@@ -27,17 +28,17 @@ import java.util.Stack;
  */
 @Controller
 public class UserController extends BaseController{
-    @Resource(name="userService")
+    @Autowired
     private UserService userService;
-    @Resource(name="addressService")
+    @Autowired
     private AddressService addressService;
-    @Resource(name ="reviewService")
+    @Autowired
     private ReviewService reviewService;
-    @Resource(name = "productOrderItemService")
+    @Autowired
     private ProductOrderItemService productOrderItemService;
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "productImageService")
+    @Autowired
     private ProductImageService productImageService;
 
     //转到后台管理-用户页-ajax

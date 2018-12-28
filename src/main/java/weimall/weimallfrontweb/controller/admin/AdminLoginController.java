@@ -1,6 +1,7 @@
 package weimall.weimallfrontweb.controller.admin;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Admin;
 import weimall.weimallfrontweb.service.AdminService;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class AdminLoginController extends BaseController {
-    @Resource(name = "adminService")
+    @Autowired
     private AdminService adminService;
 
     //转到后台管理-登录页

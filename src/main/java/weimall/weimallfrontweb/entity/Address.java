@@ -1,6 +1,8 @@
 package weimall.weimallfrontweb.entity;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String address_areaId;
     private String address_name;
     private Address address_regionId;

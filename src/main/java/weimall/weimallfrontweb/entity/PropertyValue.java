@@ -1,6 +1,8 @@
 package weimall.weimallfrontweb.entity;
 
-public class PropertyValue {
+import java.io.Serializable;
+
+public class PropertyValue implements Serializable {
     private Integer propertyValue_id;
     private String propertyValue_value;
     private Property propertyValue_property;

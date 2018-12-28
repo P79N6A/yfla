@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.AddressMapper;
 import weimall.weimallfrontweb.entity.Address;
 import weimall.weimallfrontweb.service.AddressService;
@@ -7,16 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
+
 import java.util.List;
 
-@Service("addressService")
+@Service
 public class AddressServiceImpl implements AddressService{
+    @Autowired
     private AddressMapper addressMapper;
-    @Resource(name = "addressMapper")
-    public void setAddressMapper(AddressMapper addressMapper) {
-        this.addressMapper = addressMapper;
-    }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override

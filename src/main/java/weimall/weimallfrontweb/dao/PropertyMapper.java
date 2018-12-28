@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import weimall.weimallfrontweb.entity.Property;
 import weimall.weimallfrontweb.util.PageUtil;
 import org.apache.ibatis.annotations.Param;

@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.*;
 import weimall.weimallfrontweb.service.*;
@@ -25,17 +26,17 @@ import java.util.*;
  */
 @Controller
 public class ProductController extends BaseController{
-    @Resource(name = "categoryService")
+    @Autowired
     private CategoryService categoryService;
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "productImageService")
+    @Autowired
     private ProductImageService productImageService;
-    @Resource(name = "propertyService")
+    @Autowired
     private PropertyService propertyService;
-    @Resource(name = "propertyValueService")
+    @Autowired
     private PropertyValueService propertyValueService;
-    @Resource(name = "lastIDService")
+    @Autowired
     private LastIDService lastIDService;
 
     //转到后台管理-产品页-ajax

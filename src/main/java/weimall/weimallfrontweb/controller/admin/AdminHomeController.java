@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Admin;
 import weimall.weimallfrontweb.entity.OrderGroup;
@@ -26,13 +27,13 @@ import java.util.*;
  */
 @Controller
 public class AdminHomeController extends BaseController {
-    @Resource(name = "adminService")
+    @Autowired
     private AdminService adminService;
-    @Resource(name = "productOrderService")
+    @Autowired
     private ProductOrderService productOrderService;
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "userService")
+    @Autowired
     private UserService userService;
 
     //转到后台管理-主页

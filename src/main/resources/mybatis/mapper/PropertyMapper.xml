@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xq.tmall.dao.PropertyMapper">
+<mapper namespace="weimall.weimallfrontweb.dao.PropertyMapper">
     <resultMap id="propertyMap" type="property">
         <id property="property_id" column="property_id"/>
         <result property="property_name" column="property_name"/>
-        <association property="property_category" javaType="com.xq.tmall.entity.Category">
+        <association property="property_category" javaType="weimall.weimallfrontweb.entity.Category">
             <id property="category_id" column="property_category_id"/>
         </association>
     </resultMap>

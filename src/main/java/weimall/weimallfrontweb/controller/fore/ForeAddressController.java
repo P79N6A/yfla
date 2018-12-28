@@ -1,6 +1,7 @@
 package weimall.weimallfrontweb.controller.fore;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import  weimall.weimallfrontweb.controller.BaseController;
 import  weimall.weimallfrontweb.entity.Address;
 import  weimall.weimallfrontweb.service.AddressService;
@@ -15,7 +16,7 @@ import java.util.List;
 
 @Controller
 public class ForeAddressController extends BaseController {
-    @Resource(name = "addressService")
+    @Autowired
     private AddressService addressService;
 
     //根据address_areaId获取地址信息-ajax

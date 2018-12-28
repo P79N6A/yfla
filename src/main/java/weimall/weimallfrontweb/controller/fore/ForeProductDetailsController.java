@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.fore;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import  weimall.weimallfrontweb.controller.BaseController;
 import  weimall.weimallfrontweb.entity.*;
 import  weimall.weimallfrontweb.service.*;
@@ -22,21 +23,21 @@ import java.util.Random;
  */
 @Controller
 public class ForeProductDetailsController extends BaseController {
-    @Resource(name = "productService")
+    @Autowired
     private ProductService productService;
-    @Resource(name = "userService")
+    @Autowired
     private UserService userService;
-    @Resource(name = "productImageService")
+    @Autowired
     private ProductImageService productImageService;
-    @Resource(name = "categoryService")
+    @Autowired
     private CategoryService categoryService;
-    @Resource(name = "propertyValueService")
+    @Autowired
     private PropertyValueService propertyValueService;
-    @Resource(name = "propertyService")
+    @Autowired
     private PropertyService propertyService;
-    @Resource(name = "reviewService")
+    @Autowired
     private ReviewService reviewService;
-    @Resource(name = "productOrderItemService")
+    @Autowired
     private ProductOrderItemService productOrderItemService;
 
     //转到前台天猫-产品详情页

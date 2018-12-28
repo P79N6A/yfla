@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.UserMapper;
 import weimall.weimallfrontweb.entity.User;
 import weimall.weimallfrontweb.service.UserService;
@@ -12,14 +13,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService{
+    @Autowired
     private UserMapper userMapper;
-    @Resource(name = "userMapper")
-    public void setUserMapper(UserMapper userMapper) {
-        this.userMapper = userMapper;
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
     public boolean add(User user) {

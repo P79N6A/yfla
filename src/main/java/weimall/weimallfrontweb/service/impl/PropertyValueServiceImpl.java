@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.PropertyValueMapper;
 import weimall.weimallfrontweb.entity.PropertyValue;
 import weimall.weimallfrontweb.service.PropertyValueService;
@@ -11,14 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("propertyValueService")
+@Service
 public class PropertyValueServiceImpl implements PropertyValueService{
+    @Autowired
     private PropertyValueMapper propertyValueMapper;
-    @Resource(name = "propertyValueMapper")
-    public void setPropertyValueMapper(PropertyValueMapper propertyValueMapper) {
-        this.propertyValueMapper = propertyValueMapper;
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
     public boolean add(PropertyValue propertyValue) {

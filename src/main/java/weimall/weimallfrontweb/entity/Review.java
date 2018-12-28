@@ -1,10 +1,11 @@
 package weimall.weimallfrontweb.entity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class Review {
+public class Review implements Serializable {
     private Integer review_id;
     private String review_content;
     private Date review_createDate;

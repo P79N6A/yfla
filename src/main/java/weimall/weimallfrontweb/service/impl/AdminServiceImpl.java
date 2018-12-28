@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.AdminMapper;
 import weimall.weimallfrontweb.entity.Admin;
 import weimall.weimallfrontweb.service.AdminService;
@@ -8,17 +9,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.List;
 
-@Service("adminService")
+@Service
 public class AdminServiceImpl implements AdminService {
 
+    @Autowired
     private AdminMapper adminMapper;
-    @Resource(name = "adminMapper")
-    public void setAdminMapper(AdminMapper adminMapper) {
-        this.adminMapper = adminMapper;
-    }
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override

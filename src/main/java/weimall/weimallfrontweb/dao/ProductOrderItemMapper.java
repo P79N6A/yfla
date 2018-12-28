@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import weimall.weimallfrontweb.entity.OrderGroup;
 import weimall.weimallfrontweb.entity.ProductOrderItem;
 import weimall.weimallfrontweb.util.PageUtil;

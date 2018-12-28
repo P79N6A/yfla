@@ -1,6 +1,8 @@
 package weimall.weimallfrontweb.entity;
 
-public class ProductOrderItem {
+import java.io.Serializable;
+
+public class ProductOrderItem implements Serializable {
     private Integer productOrderItem_id;
     private Short productOrderItem_number;
     private Double productOrderItem_price;

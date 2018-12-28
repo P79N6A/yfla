@@ -3,6 +3,7 @@ package weimall.weimallfrontweb.controller.admin;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.controller.BaseController;
 import weimall.weimallfrontweb.entity.Category;
 import weimall.weimallfrontweb.entity.Property;
@@ -30,11 +31,11 @@ import java.util.UUID;
  */
 @Controller
 public class CategoryController extends BaseController {
-    @Resource(name = "categoryService")
+    @Autowired
     private CategoryService categoryService;
-    @Resource(name = "lastIDService")
+    @Autowired
     private LastIDService lastIDService;
-    @Resource(name = "propertyService")
+    @Autowired
     private PropertyService propertyService;
 
     //转到后台管理-分类页-ajax

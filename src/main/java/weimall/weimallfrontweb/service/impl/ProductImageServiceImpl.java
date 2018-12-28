@@ -1,5 +1,6 @@
 package weimall.weimallfrontweb.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import weimall.weimallfrontweb.dao.ProductImageMapper;
 import weimall.weimallfrontweb.entity.ProductImage;
 import weimall.weimallfrontweb.service.ProductImageService;
@@ -11,14 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("productImageService")
+@Service
 public class ProductImageServiceImpl implements ProductImageService{
+    @Autowired
     private ProductImageMapper productImageMapper;
-    @Resource(name = "productImageMapper")
-    public void setProductImageMapper(ProductImageMapper productImageMapper) {
-        this.productImageMapper = productImageMapper;
-    }
-
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
     public boolean add(ProductImage productImage) {

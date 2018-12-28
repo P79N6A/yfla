@@ -1,8 +1,9 @@
 package weimall.weimallfrontweb.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Property {
+public class Property implements Serializable {
     private Integer property_id;
     private String property_name;
     private Category property_category;
