@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.PropertyValueMapper">
-    <resultMap id="propertyValueMap" type="propertyValue">
+    <resultMap id="propertyValueMap" type="weimall.weimallfrontweb.entity.PropertyValue">
         <id property="propertyValue_id" column="propertyValue_id"/>
         <result property="propertyValue_value" column="propertyValue_value"/>
         <association property="propertyValue_property" javaType="weimall.weimallfrontweb.entity.Property">
@@ -14,7 +14,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="propertyValue">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.PropertyValue">
         INSERT propertyValue(propertyValue_id,propertyValue_value,propertyValue_property_id,propertyValue_product_id)
             VALUES (
             null,
@@ -22,17 +22,17 @@
         #{propertyValue.propertyValue_property.property_id},
         #{propertyValue.propertyValue_product.product_id})
     </insert>
-    <insert id="insertList" parameterType="list">
+    <insert id="insertList" parameterType="java.util.List">
         INSERT propertyValue(propertyValue_id,propertyValue_value,propertyValue_property_id,propertyValue_product_id)
         VALUES
-        <foreach collection="propertyValue_list" index="index" item="propertyValue" separator=",">
+        <foreach collection="propertyValue_list" index="index" item="weimall.weimallfrontweb.entity.PropertyValue" separator=",">
             (null,
             #{propertyValue.propertyValue_value},
             #{propertyValue.propertyValue_property.property_id},
             #{propertyValue.propertyValue_product.product_id})
         </foreach>
     </insert>
-    <update id="updateOne" parameterType="propertyValue">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.PropertyValue">
         UPDATE propertyValue
         <set>
             <if test="propertyValue.propertyValue_value != null">propertyValue_value = #{propertyValue.propertyValue_value}</if>
@@ -70,7 +70,7 @@
             propertyValue_id = #{propertyValue_id}
         </where>
     </select>
-    <select id="selectTotal" resultType="int" parameterType="propertyValue">
+    <select id="selectTotal" resultType="int" parameterType="weimall.weimallfrontweb.entity.PropertyValue">
         SELECT COUNT(propertyValue_id) FROM propertyValue
         <if test="propertyValue != null">
             <where>

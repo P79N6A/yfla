@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.ProductOrderMapper">
-    <resultMap id="productOrderMap" type="productOrder">
+    <resultMap id="productOrderMap" type="weimall.weimallfrontweb.entity.ProductOrder">
         <id property="productOrder_id" column="productOrder_id"/>
         <result property="productOrder_code" column="productOrder_code"/>
         <result property="productOrder_detail_address" column="productOrder_detail_address"/>
@@ -22,7 +22,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="productOrder">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.ProductOrder">
         INSERT productOrder
         (productOrder_id,productOrder_code,productOrder_detail_address,productOrder_post,productOrder_receiver,productOrder_mobile,productOrder_pay_date,productOrder_delivery_date,productOrder_confirm_date,productOrder_status,productOrder_address,productOrder_user_id)
             VALUES (
@@ -39,7 +39,7 @@
         #{productOrder.productOrder_address.address_areaId},
         #{productOrder.productOrder_user.user_id})
     </insert>
-    <update id="updateOne" parameterType="productOrder">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.ProductOrder">
         UPDATE productOrder
         <set>
             <if test="productOrder.productOrder_address != null">
@@ -142,7 +142,7 @@
         </where>
     </select>
 
-    <select id="getTotalByDate" resultType="orderGroup">
+    <select id="getTotalByDate" resultType="weimall.weimallfrontweb.entity.OrderGroup">
         SELECT
         productOrder_pay_date,count(productOrder_id) as productOrder_count ,productOrder_status from productOrder
         <where>

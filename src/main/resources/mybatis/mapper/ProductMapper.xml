@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.ProductMapper">
-    <resultMap id="productMap" type="product">
+    <resultMap id="productMap" type="weimall.weimallfrontweb.entity.Product">
         <id property="product_id" column="product_id"/>
         <result property="product_name" column="product_name"/>
         <result property="product_title" column="product_title"/>
@@ -16,7 +16,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="product">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.Product">
         INSERT product (product_id,product_name,product_title,product_price,product_sale_price,product_create_date,product_isEnabled,product_category_id)
             VALUES(
             null,
@@ -28,7 +28,7 @@
             #{product.product_isEnabled},
             #{product.product_category.category_id})
     </insert>
-    <update id="updateOne" parameterType="product">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.Product">
         UPDATE product
         <set>
             <if test="product.product_name != null">product_name = #{product.product_name},</if>
@@ -127,7 +127,7 @@
             product_id = #{product_id}
         </where>
     </select>
-    <select id="selectTitle" resultType="product">
+    <select id="selectTitle" resultType="weimall.weimallfrontweb.entity.Product">
         SELECT product_id,product_title FROM product
         <where>
             <if test="product != null">

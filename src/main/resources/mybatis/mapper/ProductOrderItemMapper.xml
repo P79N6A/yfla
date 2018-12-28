@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.ProductOrderItemMapper">
-    <resultMap id="productOrderItemMap" type="productOrderItem">
+    <resultMap id="productOrderItemMap" type="weimall.weimallfrontweb.entity.ProductOrderItem">
         <id property="productOrderItem_id" column="productOrderItem_id"/>
         <result property="productOrderItem_number" column="productOrderItem_number"/>
         <result property="productOrderItem_price" column="productOrderItem_price"/>
@@ -19,7 +19,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="productOrderItem">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.ProductOrderItem">
         INSERT productOrderItem
         (productOrderItem_id,productOrderItem_number,productOrderItem_price,productOrderItem_product_id,productOrderItem_order_id,productOrderItem_user_id,productOrderItem_userMessage)
         VALUES (
@@ -31,7 +31,7 @@
         #{productOrderItem.productOrderItem_user.user_id},
         #{productOrderItem.productOrderItem_userMessage})
     </insert>
-    <update id="updateOne" parameterType="productOrderItem">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.ProductOrderItem">
         UPDATE productOrderItem
         <set>
             <if test="productOrderItem.productOrderItem_order != null">
@@ -60,7 +60,7 @@
             </foreach>
         </where>
     </delete>
-    <select id="select" parameterType="com.xq.tmall.util.PageUtil" resultMap="productOrderItemMap">
+    <select id="select" parameterType="weimall.weimallfrontweb.util.PageUtil" resultMap="productOrderItemMap">
         SELECT
         productOrderItem_id,productOrderItem_number,productOrderItem_price,productOrderItem_product_id,productOrderItem_order_id,productOrderItem_user_id,productOrderItem_userMessage
         FROM productOrderItem
@@ -134,7 +134,7 @@
         SELECT SUM(productOrderItem_number) FROM productOrderItem WHERE productOrderItem_product_id = #{product_id}
     </select>
 
-    <select id="getTotalByProductId" resultType="orderGroup">
+    <select id="getTotalByProductId" resultType="weimall.weimallfrontweb.entity.OrderGroup">
         SELECT
         productOrder.productOrder_pay_date as productOrder_pay_date,count(productOrder.productOrder_id) as productOrder_count,productOrder.productOrder_status from productOrderItem,productOrder
         <where>

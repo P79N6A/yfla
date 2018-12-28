@@ -135,4 +135,9 @@ public class AccountController extends BaseController{
 
         return jsonObject.toJSONString();
     }
+
+    @RequestMapping("admin/sss")
+    public String sss(){
+        return "admin/include/sss";
+    }
 }

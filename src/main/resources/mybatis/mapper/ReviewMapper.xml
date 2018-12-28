@@ -3,14 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.ReviewMapper">
-    <resultMap id="reviewMap" type="review">
+    <resultMap id="reviewMap" type="weimall.weimallfrontweb.entity.Review">
         <id column="review_id" property="review_id"/>
         <result column="review_content" property="review_content"/>
         <result column="review_createDate" property="review_createDate"/>
         <association property="review_user" javaType="weimall.weimallfrontweb.entity.User">
             <id property="user_id" column="review_user_id"/>
         </association>
-        <association property="review_product" javaType="com.xq.tmall.entity.Product">
+        <association property="review_product" javaType="weimall.weimallfrontweb.entity.Product">
             <id property="product_id" column="review_product_id"/>
         </association>
         <association property="review_orderItem" javaType="weimall.weimallfrontweb.entity.ProductOrderItem">
@@ -18,7 +18,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="review">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.Review">
         INSERT review (review_id,review_content,review_createDate,review_user_id,review_product_id,review_orderItem_id)
             VALUES (
             null,
@@ -28,7 +28,7 @@
         #{review.review_product.product_id},
         #{review.review_orderItem.productOrderItem_id})
     </insert>
-    <update id="updateOne" parameterType="review">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.Review">
         UPDATE review
         <set>
             <if test="review.review_content != null">review_content = #{review.review_content},</if>
@@ -83,7 +83,7 @@
             review_id = #{review_id}
         </where>
     </select>
-    <select id="selectTotal" resultType="int" parameterType="review">
+    <select id="selectTotal" resultType="int" parameterType="weimall.weimallfrontweb.entity.Review">
         SELECT COUNT(review_id) FROM review
         <if test="review != null">
             <where>

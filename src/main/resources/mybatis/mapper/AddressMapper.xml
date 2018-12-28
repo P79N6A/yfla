@@ -10,14 +10,14 @@
             <id property="address_areaId" column="address_regionId"/>
         </association>
     </resultMap>
-    <insert id="insertOne" parameterType="address">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.Address">
         INSERT address(address_areaId,address_name,address_regionId)
             VALUES (
             #{address.address_areaId},
             #{address.address_name},
             #{address.address_regionId})
     </insert>
-    <update id="updateOne" parameterType="address">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.Address">
         UPDATE address
         <set>
             <if test="address.address_name != null">address_name = #{address.address_name}</if>

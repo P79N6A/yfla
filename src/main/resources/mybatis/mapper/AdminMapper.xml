@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.AdminMapper">
-    <insert id="insertOne" parameterType="admin">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.Admin">
         INSERT admin(admin_id,admin_name,admin_nickname,admin_password,admin_profile_picture_src)
             VALUES (
             null,
@@ -13,7 +13,7 @@
             #{admin.admin_password},
             #{admin.admin_profile_picture_src})
     </insert>
-    <update id="updateOne" parameterType="admin">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.Admin">
         UPDATE admin
         <set>
             <if test="admin.admin_profile_picture_src != null">admin_profile_picture_src = #{admin.admin_profile_picture_src},</if>
@@ -24,7 +24,7 @@
             admin_id = #{admin.admin_id}
         </where>
     </update>
-    <select id="select" resultType="admin">
+    <select id="select" resultType="weimall.weimallfrontweb.entity.Admin">
         SELECT admin_id,admin_name,admin_nickname,admin_profile_picture_src FROM admin
         <if test="pageUtil != null">
             LIMIT #{pageUtil.index},#{pageUtil.count}
@@ -35,7 +35,7 @@
             </if>
         </where>
     </select>
-    <select id="selectOne" resultType="admin" parameterType="int">
+    <select id="selectOne" resultType="weimall.weimallfrontweb.entity.Admin" parameterType="int">
         SELECT admin_id,admin_name,admin_nickname,admin_profile_picture_src FROM admin
         <where>
             <if test="admin_id != null">
@@ -46,7 +46,7 @@
             </if>
         </where>
     </select>
-    <select id="selectByLogin" resultType="admin">
+    <select id="selectByLogin" resultType="weimall.weimallfrontweb.entity.Admin">
         SELECT admin_id FROM admin
         <where>
             admin_name = #{admin_name} and admin_password = #{admin_password}

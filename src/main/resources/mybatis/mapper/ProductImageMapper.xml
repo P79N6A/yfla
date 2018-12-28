@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="weimall.weimallfrontweb.dao.ProductImageMapper">
-    <resultMap id="imageMap" type="productImage">
+    <resultMap id="imageMap" type="weimall.weimallfrontweb.entity.ProductImage">
         <id property="productImage_id" column="productImage_id"/>
         <result property="productImage_type" column="productImage_type"/>
         <result property="productImage_src" column="productImage_src"/>
@@ -12,7 +12,7 @@
         </association>
     </resultMap>
 
-    <insert id="insertOne" parameterType="productImage">
+    <insert id="insertOne" parameterType="weimall.weimallfrontweb.entity.Product">
         INSERT productImage (productImage_id,productImage_type,productImage_src,productImage_product_id)
             VALUES (
             null,
@@ -20,7 +20,7 @@
             #{productImage.productImage_src},
             #{productImage.productImage_product.product_id})
     </insert>
-    <insert id="insertList" parameterType="list">
+    <insert id="insertList" parameterType="java.util.List">
         INSERT productImage (productImage_id,productImage_type,productImage_src,productImage_product_id)
         VALUES
         <foreach collection="productImage_list" item="productImage" index="index" separator=",">
@@ -30,7 +30,7 @@
             #{productImage.productImage_product.product_id})
         </foreach>
     </insert>
-    <update id="updateOne" parameterType="productImage">
+    <update id="updateOne" parameterType="weimall.weimallfrontweb.entity.ProductImage">
         UPDATE productImage
         <set>
             <if test="productImage.productImage_type != null">productImage_type = #{productImage.productImage_type},
@@ -65,8 +65,8 @@
         </if>
     </select>
     <select id="selectOne" resultMap="imageMap" parameterType="int">
-        SELECT productImage_id,productImage_type,productImage_src,productImage_product_id FROM productImage
-        <where>
+        SELECT productImage_id,produc        <where>
+        tImage_type,productImage_src,productImage_product_id FROM productImage
             productImage_id = #{productImage_id}
         </where>
     </select>
