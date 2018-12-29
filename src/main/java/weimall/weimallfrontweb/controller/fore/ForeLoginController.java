@@ -32,7 +32,7 @@ public class ForeLoginController extends BaseController {
 
     //登陆验证-ajax
     @ResponseBody
-    @RequestMapping(value = "login/doLogin", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    @RequestMapping("/login/doLogin")
     public String checkLogin(HttpSession session, @RequestParam String username, @RequestParam String password) {
         logger.info("用户验证登录");
         User user = userService.login(username, password);

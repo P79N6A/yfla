@@ -69,7 +69,7 @@ public class ForeHomeController extends BaseController {
         map.put("specialProductList", specialProductList);
 
         logger.info("转到前台主页");
-        return "fore/homePage";
+        return "/fore/homePage";
     }
 
     //转到前台天猫-错误页
