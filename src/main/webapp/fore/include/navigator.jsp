@@ -21,6 +21,7 @@
                     <em>喵，欢迎来天猫</em>
                     <a href="${pageContext.request.contextPath}/login">请登录</a>
                     <a href="${pageContext.request.contextPath}/register">免费注册</a>
+                    <a href="${pageContext.request.contextPath}/limeibing/index.html">个人中心</a>
                 </c:when>
                 <c:otherwise>
                     <em>Hi，</em>

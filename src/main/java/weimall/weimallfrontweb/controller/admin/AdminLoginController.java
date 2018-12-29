@@ -26,7 +26,7 @@ public class AdminLoginController extends BaseController {
     @RequestMapping("admin/login")
     public String goToPage(){
         logger.info("转到后台管理-登录页");
-        return "admin/loginPage";
+        return "/admin/loginPage";
     }
 
     //登陆验证-ajax

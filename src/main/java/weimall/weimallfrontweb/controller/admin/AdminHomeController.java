@@ -59,7 +59,7 @@ public class AdminHomeController extends BaseController {
         map.put("orderTotal", orderTotal);
 
         logger.info("转到后台管理-主页");
-        return "admin/homePage";
+        return "/admin/homePage";
     }
 
     //转到后台管理-主页-ajax
@@ -68,7 +68,7 @@ public class AdminHomeController extends BaseController {
         logger.info("检查管理员权限");
         Object adminId = checkAdmin(session);
         if (adminId == null) {
-            return "admin/include/loginMessage";
+            return "/admin/include/loginMessage";
         }
 
         logger.info("获取管理员信息");
@@ -86,12 +86,12 @@ public class AdminHomeController extends BaseController {
         map.put("userTotal", userTotal);
         map.put("orderTotal", orderTotal);
         logger.info("转到后台管理-主页-ajax方式");
-        return "admin/homeManagePage";
+        return "/admin/homeManagePage";
     }
 
     //按日期查询图表数据-ajax
     @ResponseBody
-    @RequestMapping(value = "admin/home/charts", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
+    @RequestMapping(value = "/admin/home/charts", method = RequestMethod.GET, produces = "application/json;charset=utf-8")
     public String getChartDataByDate(@RequestParam(required = false) String beginDate, @RequestParam(required = false) String endDate) throws ParseException {
         if (beginDate != null && endDate != null) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

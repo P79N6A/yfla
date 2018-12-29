@@ -17,6 +17,7 @@ $(function () {
         //ajax请求页面
         ajaxUtil.getPage(url,null,false);
         //设置文本
+        //location.href="http://www.baidu.com";
         var title = $(this).children("span").text();
         $("#div_home_title").children("span").text(title);
         document.title = "Tmall管理后台 - "+title;
@@ -31,7 +32,7 @@ $(function () {
         $(".menu_li[data-toggle=account]").click();
     });
     $("#nav_tools_admin_logout").click(function () {
-        location.href = "/tmall/admin/account/logout";
+        location.href = "admin/account/logout";
     });
 });
 //tbody中tr的单击样式
